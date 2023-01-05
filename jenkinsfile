@@ -1,10 +1,16 @@
 pipeline {
-    stage {
-        stage ('build') {
+    agent any
+    stages {
+        stage ('test') {
             steps {
-                sh 'echo venu'
+                sh 'echo hello'
             }
-        } 
-
+        }
+        stage ('learning') {
+            steps {
+                git url: 'https://github.com/Venumarupally/my_repo_26.git'
+                    branch: 'master'
+            }
+        }
     }
 }
